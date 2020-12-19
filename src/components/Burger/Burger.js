@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import './Burger.css';
 import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 const burger = (props) => {
-    let transformIngredients = Object.keys(props.ingredient)
+    let transformIngredients = Object.keys(props.ingredients)
     .map(igKey => {
-        return [...Array(props.ingredient[igKey])].map((_, i) => {
+        return [...Array(props.ingredients[igKey])].map((_, i) => {
            return <BurgerIngredient key={igKey + i} type={igKey} />
         });
     })
