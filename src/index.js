@@ -1,15 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducer from '../src/store/reducer';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const store = createStore(reducer);
 
 const app = (
-  <BrowserRouter>
-  <App />
-  </BrowserRouter>
+  <Provider store = {store}>
+    <BrowserRouter>
+    <App />
+    </BrowserRouter>
+  </Provider>
 );
 
 
